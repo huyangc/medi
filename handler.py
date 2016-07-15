@@ -14,6 +14,7 @@ class QueryHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("query.html")
 
+		
 class AjaxHandler(tornado.web.RequestHandler):
 	def post(self):
 		if(self.get_argument("message")=="1"):
