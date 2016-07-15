@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no"> 
+        <title>ADD</title> 
+        <script src="{{static_url('jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
+        <script src="{{static_url('bootstrap/js/bootstrap.min.js')}}"></script> 
+        <!--link href="{{static_url('css/login.css')}}" rel="stylesheet" > 
+        <link href="{{static_url('css/add.css')}}" rel="stylesheet" --> 
+        <link href="{{static_url('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    </head>
+    <script type="text/javascript">
+        
+        function Fshow(){
+            var friend = document.getElementById("friend_id")
+            var group = document.getElementById("group_id")
+            var list = document.getElementById("list_id")
+            group.style.display = "none"
+            friend.style.display = "block"
+            list.style.display = "none"
+        }
+        function Gshow(){
+            var friend = document.getElementById("friend_id")
+            var group = document.getElementById("group_id")
+            var list = document.getElementById("list_id")
+            group.style.display = "block"
+            friend.style.display = "none"
+            list.style.display = "none"
+        }
+        function Lshow(){
+            var friend = document.getElementById("friend_id")
+            var group = document.getElementById("group_id")
+            var list = document.getElementById("list_id")
+            group.style.display = "none"
+            friend.style.display = "none"
+            list.style.display = "block"
+        }
+        function add_friend(){
+            var input = document.getElementById("friend_text").value
+            if (!isNaN(input)) {
+                send('A'+input)
+            }
+            else{
+                alert("输入的ID不合法")
+            }
+        }
+        function add_list(){
+            var input = document.getElementById("list_text").value
+            send("LA"+"_"+input)
+            alert("添加成功")
+        }
+        function create_group(){
+            var input = document.getElementById("group_name").value
+            if (input.length>=1){
+                send("GC"+"_"+input)
+            }
+            else{
+                alert("不能为空")
+            }
+        }
+        function add_group(){
+            var input = document.getElementById("group_text").value
+            if (input.length>=1){
+                send("GA"+"_"+input)
+                alert("加入成功")
+            }
+            else{
+                alert("不能为空")
+            }
+        }
+    </script>
+    <body>
+        <div class="top"> 
+        </div>
+        <div class="main col-xs-12 col-sm-5"> 
+            <button class="add" id="friend" style="display:inline-block" onclick="Fshow();">
+                <b>好 友</b>
+            </button>
+            <button class="add" id="group" style="display:inline-block" onclick="Gshow();">
+                <b>群 组</b>
+            </button>
+            <button class="add" id="list" style="display:inline-block" onclick="Lshow();">
+                <b>列 表</b>
+            </button> 
+
+            <div id="friend_id" style="display:inline-block;width:100%">    
+                <form class="login_form">
+                    <p style="padding: 30px 0px 10px; position: relative;">
+                        <input class="ipt" type="text" id="friend_text" placeholder="Please input userID">    
+                    </p>
+                    <div class="op">
+                        <span>
+                            <button type="submit" class="btn mybtn" onclick="add_friend();"><b>确 认 添 加</b></button>
+                            <a type="button" class="btn mybtn" href="/chat">
+                                <b> 返 回 </b>
+                            </a>
+                        </span>         
+                    </div>
+                </form>
+            </div>
+            <div id="group_id" style="display:none;width:100%">    
+                <form class="login_form">
+                    <p style="padding: 30px 0px 10px; position: relative;">
+                        <input class="ipt" type="text" id="group_text" placeholder="Please input groupID">
+                        <br></br>
+                        <input class="ipt" type="text" id="group_name" placeholder="Please input groupName">
+                    </p>  
+                    <div class="op"> 
+                        
+                        <span>
+                            <button type="submit" class="btn mybtn" onclick="add_group();"><b>确 认 加 入</b></button>
+                            <button type="submit" class="btn mybtn" onclick="create_group();"><b>确 认 创 建</b></button>
+                            <a type="button" class="btn mybtn" href="/chat">
+                                <b> 返 回 </b>
+                            </a>
+                        </span>        
+                    </div> 
+        
+                </form>
+            </div>
+            <div id="list_id" style="display:none;width:100%">    
+                <form class="login_form">
+                    <p style="padding: 30px 0px 10px; position: relative;">
+                        <input class="ipt" type="text" id="list_text" placeholder="Please input listName">    
+                    </p>
+                    <div class="op">   
+                        <span>
+                            <button type="submit" class="btn mybtn" onclick="add_list();"><b>确 认 添 加</b></button>
+                            <a type="button" class="btn mybtn" href="/chat">
+                                <b> 返 回 </b>
+                            </a>
+                        </span>      
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
