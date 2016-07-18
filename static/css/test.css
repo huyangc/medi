@@ -2,16 +2,16 @@ div.top{
 	background: #424c50;
 	width: 100%;
 	height: 120px;
-	padding:30px 0;
 }
 div.btn{
 	width:100%;
 	padding: 0px;
+	border:0px;
 }
 button.add{
 	background:white;
 	width:50%;
-	border:1px solid #f3f9f1;
+	border:0px solid #f3f9f1;
 	padding:10px;
 	float:left;
 	outline: none;
@@ -21,13 +21,15 @@ div.content{
 	text-align: center;
 }
 div.training{
-	width:60%;
-	margin:100px auto;
-	border: 1px solid #424c50;
+	width:85%;
+	margin:20px auto;
+	border: 1px solid #f3f3f3;
+	background: white;
 }
 div.question{
-	padding: 10px;
-	border-bottom:1px solid #424c50; 
+	padding: 10px 60px;
+	text-align: left;
+	border-bottom:1px solid #f3f3f3; 
 }
 div.img{
 	padding: 20px;
@@ -38,11 +40,11 @@ div.text{
 	padding-top: 30px;
 }
 
-img{
+.img img{
 	width: 40%;
 	height:200px;
 }
-img:hover{
+.img img:hover{
 	opacity: 0.8;
 }
 
@@ -63,4 +65,159 @@ button.next{
 	background: #ffffff;
 	float:right;
 	font-size: 18px;
+}
+button.set{
+	text-align: center;
+	background: #17191B;
+	color:#1CC09F;
+	border: none;
+	border-bottom:1px solid rgba(107, 108, 109, 0.19);
+	padding: 10px;
+	margin: 20px 0;
+	width:100%;
+}
+
+input[type="radio"]{
+  margin: 3px 3px 0px 5px;  
+  display: none;
+}
+label{  
+	padding-left: 20px;
+	cursor: pointer;  
+	background: url(../images/radio.gif) no-repeat left top;
+}
+label.checked{  
+	background-position: left bottom;
+}
+/*----------------------------------------------
+    COMMON  STYLES    
+------------------------------------------------*/
+body {
+    background-color: #17191B;
+}
+
+#page-wrapper {
+	float: left;
+    padding: 15px 15px;
+    min-height: 600px;
+    background: #f3f3f3;  
+}
+#page-inner{
+  width:100%;
+  margin:10px 20px 10px 0px;
+  background-color:transparent;
+  padding:10px;
+  min-height:1200px;
+}
+
+h1, .h1, h2, .h2, h3, .h3{
+  margin-top: 7px;
+  margin-bottom: -5px;
+}
+h2{
+  color: #000;
+}
+h4{
+  padding-top:10px;
+}
+p{
+  font-size:16px;
+  line-height:25px;
+  padding-top:20px;
+}
+.navbar-side .nav > li > a > i{
+  color: #1CC09F;
+  padding: 8px;
+  width: 20px;
+  text-align: center;
+}
+.navbar-side {
+  z-index: 1;
+  float:left;
+}
+/*----------------------------------------------
+   DASHBOARD STYLES    
+------------------------------------------------*/
+.active-menu {
+  background-color: #1cc09f !important;
+  color: #fff !important;
+}
+.active-menu i{
+  color: #fff !important;
+}
+.arrow {
+  float: right;
+  margin-top: 8px;
+}
+
+.fa.arrow:before {
+  content: "\f104";
+}
+.active > a > .fa.arrow:before {
+  content: "\f107";
+}
+.nav-second-level li,
+.nav-second-level li a {
+  padding-left: 18px;
+}
+.sidebar-collapse , .sidebar-collapse .nav{
+	background:none;
+}
+.sidebar-collapse .nav {
+	padding:0;
+}
+.sidebar-collapse .nav > li > a {
+	color: #B5B5B5;
+	background:transparent;
+	text-shadow:none;
+}
+.sidebar-collapse > .nav > li > a {
+	padding: 10px 8px;
+}
+.sidebar-collapse > .nav > li {
+	border-bottom: 1px solid rgba(107, 108, 109, 0.19);
+}
+ul.nav.nav-second-level.collapse.in {
+  background: #17191B;
+}
+.sidebar-collapse .nav > li > a:hover,
+.sidebar-collapse .nav > li > a:focus {	 
+	outline:0;
+}
+ 
+.navbar-side{
+	border:none;
+	background-color: #17191B;
+	
+}
+
+.navbar-default{
+	border:0px solid black;
+	padding-left:0px;
+	padding-right:0px;    
+}
+.navbar-header{
+  background: transparent;
+}
+
+.nav > li > a > i {
+  margin-right:10px;
+  color: #FFF;
+}
+
+/*----------------------------------------------
+    MEDIA QUERIES     
+------------------------------------------------*/
+ 
+@media(min-width:768px) {
+  #page-wrapper{
+    padding: 15px 30px;
+    min-height: 1200px;
+  }
+ .navbar {
+    border-radius: 0px; 
+  }
+}
+@media(max-width:480px) {
+
 }

@@ -1,6 +1,7 @@
 $(document).ready(function(){  
     CHOSEN='0'
     $("#friend_btn").click(function(){
+        alert("hello");
         $("#group").css("display", "none");
         $("#friend").css("display", "block");
     });
